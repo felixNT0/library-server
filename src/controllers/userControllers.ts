@@ -8,6 +8,7 @@ export const editUser = asyncHandler(async (req, res, next) => {
   const { email, name } = req.body;
   const { id } = req.params;
   const token = req.headers.authorization as string;
+
   if (!token) {
     res.status(400).send("Token is required");
   }
