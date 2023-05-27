@@ -17,6 +17,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.get("/books", async (req, res) => {
+  res.send("Hello");
+});
+
 app.use("/books", bookRouter);
 app.use("/users", userRouter);
 
