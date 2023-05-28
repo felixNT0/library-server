@@ -1,5 +1,10 @@
-import { Schema, Types, model } from "mongoose";
+import { Schema, model } from "mongoose";
 import { BookType } from "types/bookTypes";
+
+export enum BookStatusEnum {
+  NOT_BORROWED = "not_borrowed",
+  BORROWED = "borrowed",
+}
 
 const bookSchema = new Schema<BookType>(
   {
@@ -18,8 +23,9 @@ const bookSchema = new Schema<BookType>(
     imageUrl: {
       type: String,
     },
-    status: { type: String },
-    user: { type: Types.ObjectId, ref: "User" },
+    status: { type: String || BookStatusEnum },
+    user: { type: {}, ref: "User" },
+    borrowed_user: { type: {}, ref: "User" },
   },
   {
     timestamps: true,

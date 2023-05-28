@@ -52,8 +52,6 @@ export const deleteUser = asyncHandler(async (req, res, next) => {
     }
   } catch (error) {
     next(error);
-
-    console.log(error);
   }
 });
 
@@ -63,8 +61,6 @@ export const getAllUsers = asyncHandler(async (req, res, next) => {
     res.status(200).send({ users });
   } catch (error) {
     next(error);
-    res.status(400).send("No users found");
-    console.log(error);
   }
 });
 
@@ -93,7 +89,5 @@ export const getUserProfile = asyncHandler(async (req, res, next) => {
     }
   } catch (error) {
     next(error);
-    res.status(400).send("No users found");
-    console.log(error);
   }
 });

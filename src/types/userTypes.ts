@@ -1,4 +1,6 @@
-export type UserType = {
+import { Document } from "mongoose";
+
+export interface UserType extends Document {
   first_name: string;
   last_name: string;
   username: string;
@@ -6,4 +8,4 @@ export type UserType = {
   password: string;
   user_role?: string;
   profile_picture?: string;
-};
+}

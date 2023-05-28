@@ -22,6 +22,7 @@ export const registerUser = asyncHandler(async (req, res, next) => {
 
     if (userExists) {
       res.status(400).send("User already exists");
+      return;
     }
 
     const salt = await bcrypt.genSalt(10);
@@ -52,8 +53,6 @@ export const registerUser = asyncHandler(async (req, res, next) => {
     }
   } catch (error) {
     next(error);
-
-    console.log(error);
   }
 });
 
@@ -78,8 +77,6 @@ export const loginUser = asyncHandler(async (req, res, next) => {
     }
   } catch (error) {
     next(error);
-
-    console.log(error);
   }
 });
 
