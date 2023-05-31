@@ -100,16 +100,16 @@ export const deleteBook = asyncHandler(async (req, res, next) => {
 export const getAllBooks = asyncHandler(async (req, res, next) => {
   try {
     const token = req.headers.authorization as string;
-    if (token) {
-      const books = await BooksModel.find({
-        status: BookStatusEnum.NOT_BORROWED,
-      });
-      if (books) {
-        res.status(200).send({ books });
-      } else {
-        res.status(200).send("No books found");
-      }
+    // if (token) {
+    const books = await BooksModel.find({
+      status: BookStatusEnum.NOT_BORROWED,
+    });
+    if (books) {
+      res.status(200).send({ books });
+    } else {
+      res.status(200).send("No books found");
     }
+    // }
   } catch (error) {
     next(error);
   }
