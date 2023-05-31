@@ -1,6 +1,11 @@
 {
   "version": 2,
   "framework": "node",
+  "functions": {
+    "/(.*)": {
+      "timeout": 30
+    }
+  },
   "builds": [
     {
       "src": "app.ts",

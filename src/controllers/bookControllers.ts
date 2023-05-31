@@ -98,6 +98,7 @@ export const deleteBook = asyncHandler(async (req, res, next) => {
 });
 
 export const getAllBooks = asyncHandler(async (req, res, next) => {
+  req.setTimeout(30000);
   try {
     const token = req.headers.authorization as string;
     // if (token) {
