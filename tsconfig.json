@@ -13,6 +13,6 @@
     "moduleResolution": "node",
     "baseUrl": "src"
   },
-  "include": ["/**/*.ts"],
+  "include": ["/**/*.ts", "app.mjs"],
   "exclude": ["node_modules"]
 }
