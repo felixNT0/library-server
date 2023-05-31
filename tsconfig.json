@@ -13,6 +13,6 @@
     "moduleResolution": "node",
     "baseUrl": "src"
   },
-  "include": ["/**/*.ts", "app.mjs"],
+  "include": ["/**/*.ts", "app.ts", "src/config/db.ts"],
   "exclude": ["node_modules"]
 }
